@@ -21,6 +21,19 @@
     margin: 10px 5px;
     min-width: 60px;
   }
+
+  .MMM-ShoppingList .shoppingListLogo {
+    background-color: #0000003;
+    border: 0px solid white;
+    border-radius: 0px;
+    color: black;
+    font-size: 26px;
+    padding: 10px 10px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 10px 5px;
+    min-width: 60px;
+  }
   
   .MMM-ShoppingList {
   }
