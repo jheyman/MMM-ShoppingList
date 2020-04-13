@@ -7,10 +7,9 @@
   }
 
   .MMM-ShoppingList .listItem {
-    /*opacity: 0.8;*/
     list-style: none;
     font-size: 20px;
-    line-height: 1.25em;
+    line-height: 1.35em;
   }
   
   .MMM-ShoppingList .addItemButton {
@@ -27,13 +26,10 @@
     text-decoration: none;
     cursor: pointer;
     margin: 0px 10px;
-    /*margin: 20px auto 0;*/
-    /*min-width: 60px;*/
   }
 
   .MMM-ShoppingList .shoppingListTitle {
     background-color: #00000000;
-    /*opacity: 0.8;*/
     border: 0px solid red;
     border-radius: 0px;
     color: white;

@@ -16,10 +16,10 @@ module.exports = NodeHelper.create({
     },
     getItems: function (url) {
         var self = this;
-        console.log("MMM-Shoppinglist GET fresh JSON data");
         request({ url: url, method: 'GET' }, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 var json = JSON.parse(body);
+                console.log("MMM-Shoppinglist retrieved remote data");
                 // Send the json data back with the url to distinguish it on the receiving part
                 self.sendSocketNotification("MMM-ShoppingList_SHOPPINGLIST_ITEMS", json);
             }
@@ -27,7 +27,6 @@ module.exports = NodeHelper.create({
     },
     addItem: function (itemName, url) {
         var self = this;
-        console.log("MMM-Shoppinglist perform remote ADD");
         request({ url: encodeURI(url+"?newitem="+itemName), method: 'GET' }, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log("Added item "+ itemName+" successfully");
@@ -37,7 +36,6 @@ module.exports = NodeHelper.create({
     },
     deleteItem: function (itemName, url) {
         var self = this;
-        console.log("MMM-Shoppinglist perform remote ADD");
         request({ url: encodeURI(url+"?whereClause="+itemName), method: 'GET' }, function (error, response, body) {
             if (!error && response.statusCode == 200) {
                 console.log("Deleted item "+ itemName +" successfully");

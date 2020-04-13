@@ -25,6 +25,9 @@ Module.register("MMM-ShoppingList", {
         } else if  (notification === "KEYBOARD_INPUT" && payload.key === keyboardInputID) {
             console.log("MMM-ShoppingList keyboard returned " + payload.message);
             this.sendSocketNotification("SHOPPINGLIST_ADDITEM", {itemName: payload.message, url: this.config.additem_url});
+        } else if  (notification === "DELETE_ITEM") {
+            console.log("MMM-ShoppingList deleting " + payload);
+            this.deleteItem(payload);
         }
     },
     
@@ -87,9 +90,7 @@ Module.register("MMM-ShoppingList", {
         
         function makeOnClickHandler(item) {
             return function() {
-                if (confirm("Delete item?") == true) {
-                    self.deleteItem(item);
-                }
+                self.sendNotification("PROMPT_YESNO", {text:"Delete "+ item +"?", yesNotification: {event: "DELETE_ITEM", payload: item}, noNotification: {event: '', payload: ''}});
             };
         };
 
