@@ -77,7 +77,7 @@ Module.register("MMM-ShoppingList", {
         addItem.setAttribute("name", "addItemButton");
         addItem.onclick = () => {
             this.log("MMM-ShoppingList addItem triggered");
-            this.sendNotification("KEYBOARD", { key: keyboardInputID, style: "default"});											
+            this.sendNotification("KEYBOARD", { key: keyboardInputID});											
         }; 
         
         menubar.appendChild(shoppingListTitle);
